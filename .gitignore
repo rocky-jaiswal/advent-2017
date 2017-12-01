@@ -1,0 +1,4 @@
+/js/node_modules/
+/clj/target/
+/clj/.lein-repl-history
+/clj/.lein-failures

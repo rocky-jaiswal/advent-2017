@@ -1,0 +1,21 @@
+{
+  "name": "advent-2017",
+  "version": "1.0.0",
+  "description": "Advent of code 2017 solns",
+  "main": "index.js",
+  "author": "Rocky Jaiswal",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^21.2.1"
+  },
+  "scripts": {
+    "test": "npx jest"
+  }
+}
