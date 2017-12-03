@@ -70,7 +70,6 @@ const spiral = (num) => {
       return { n, x: path[idx].x + 0, y: path[idx].y - 1 }
     }
 
-    direction = 'RIGHT'
     dist = dist + 1
     path.push({ x: path[idx].x + 1, y: path[idx].y + 0 })
     return { n, x: path[idx].x + 1, y: path[idx].y + 0 }
