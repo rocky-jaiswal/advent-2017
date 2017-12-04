@@ -1,4 +1,4 @@
-const { toArr, isValid, passphrase } = require('../lib/day4')
+const { toArr, isValid, passphrase, isValidWithoutAnagrams } = require('../lib/day4')
 const FS = require('fs')
 
 test('day 4 - isValid sample', () => {
@@ -9,6 +9,10 @@ test('day 4 - isValid sample', () => {
 
 test('isValid', () => {
   expect(isValid(['kvvfl', 'kvvfl', 'olud', 'wjqsqa', 'olud', 'frc'])).toBe(false)
+})
+
+test('isValid - anagram', () => {
+  expect(isValidWithoutAnagrams(['abcde', 'xxrr', 'ecabd'])).toBe(false)
 })
 
 test('day 4 - sample', () => {
