@@ -1,5 +1,5 @@
 const { toArr, isValid, passphrase, isValidWithoutAnagrams } = require('../lib/day4')
-const FS = require('fs')
+const { readSampleData } = require('../lib/utils')
 
 test('day 4 - isValid sample', () => {
   expect(isValid(toArr('aa bb cc dd ee'))).toEqual(true)
@@ -23,10 +23,6 @@ aa bb cc dd aaa`
 })
 
 test('day 4 - main', () => {
-  const input = readSampleData()
+  const input = readSampleData('day4_input.txt')
   expect(passphrase(input)).toEqual(337)
 })
-
-const readSampleData = (filename = 'day4_input.txt') => {
-  return FS.readFileSync(`${__dirname}/${filename}`).toString()
-}
