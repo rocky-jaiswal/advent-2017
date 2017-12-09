@@ -1,7 +1,7 @@
 const { readSampleData } = require('./utils')
 
 const parseSum = (filename = 'day9_sample.txt') => {
-  const input = readSampleData(filename).split('').filter((c) => c.trim() !== '')
+  const input = readSampleData(filename).split('')
 
   let groupStarted = false
   let garbageStarted = false
