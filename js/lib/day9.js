@@ -9,6 +9,7 @@ const parseSum = (filename = 'day9_sample.txt') => {
   let group = []
   let nested = 0
   const groups = []
+  let totalGarbage = 0
 
   input.forEach((i) => {
     if (!ignoreStarted) {
@@ -16,15 +17,15 @@ const parseSum = (filename = 'day9_sample.txt') => {
         ignoreStarted = true
         return
       }
-      if (i === '<') {
-        garbageStarted = true
-        return
-      }
       if (i === '>') {
         garbageStarted = false
         return
       }
       if (!garbageStarted) {
+        if (i === '<') {
+          garbageStarted = true
+          return
+        }
         if (!groupStarted && i === '{') {
           nested = nested + 1
           groupStarted = true
@@ -45,6 +46,8 @@ const parseSum = (filename = 'day9_sample.txt') => {
             group = Array.from([])
           }
         }
+      } else {
+        totalGarbage = totalGarbage + 1
       }
     } else {
       ignoreStarted = false
@@ -52,6 +55,7 @@ const parseSum = (filename = 'day9_sample.txt') => {
   })
 
   // console.log(groups.map((g) => g.join('')))
+  console.log(totalGarbage)
 
   return groups
     .map((g) => g.join(''))
