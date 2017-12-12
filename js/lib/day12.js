@@ -1,3 +1,5 @@
+const { unique } = require('./utils')
+
 const pipes = (input) => {
   let connected = []
   let visitedSources = []
@@ -20,10 +22,7 @@ const pipes = (input) => {
 
   records.forEach((r) => findConnectedNodes('0', records))
 
-  return Object.keys(connected.reduce((acc, e) => {
-    acc[e] = true
-    return acc
-  }, {})).length
+  return unique(connected).length
 }
 
 module.exports = {
